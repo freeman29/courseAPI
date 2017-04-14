@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
 		"start": "./node_modules/.bin/ts-node ./server/server.ts",
-		"watch": "./node_modulse/.bin/nodemone -w . --ext \".ts\" --exec \"npm run start\""
+		"watch": "./node_modules/.bin/nodemon -w . --ext \".ts\" --exec \"npm run start\""
   },
   "repository": {
     "type": "git",
