@@ -3,9 +3,10 @@ import * as _ from 'lodash';
 import { Request, Response } from 'express';
 import { findAllCourses } from "../queries/findAllCourses";
 import { onError } from './onError';
+import { onSuccess } from './onSuccess';
 
 export const apiGetAllCourses = (req: Request, res: Response) =>  {
 	findAllCourses()
-		.then(results => res.status(200).json(results))
+		.then(_.partial(onSuccess, res))
 		.catch(_.partial(onError, res, "Find All Courses Failed!"));
 };
