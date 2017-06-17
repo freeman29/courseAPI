@@ -3,8 +3,11 @@ import { Application } from 'express';// type interface of express Application
 import { initRestApi } from "./api/api";
 import { apiErrorHandler } from './api/apiErrorHandler';
 
+const bodyParser = require('body-parser');
 const app: Application = express();
 const port: number = 8090;
+
+app.use(bodyParser.json());
 
 initRestApi(app);
 
